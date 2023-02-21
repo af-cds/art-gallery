@@ -1,4 +1,5 @@
 import Navigation from "../components/Navigation";
+import Spotlight from "../components/Spotlight";
 import Pieces from "./pieces";
 import useSWR from "swr";
 import ArtPieces from "../components/ArtPieces";
@@ -18,7 +19,8 @@ export default function HomePage() {
 
   return (
     <>
-      <ArtPieces pieces={data} />
+      {/* // <ArtPieces pieces={data} /> */}
+      <Spotlight pieces={data} />
     </>
   );
 }
