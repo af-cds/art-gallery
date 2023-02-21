@@ -13,14 +13,15 @@ export default function Spotlight({ pieces }) {
 
   return (
     <>
-    <section>
-      <h1>Artist Name : {pieces[artKey].artist}</h1>
-      <Image
-        src={pieces[artKey].imageSource}
-        height={400}
-        width={300}
-        alt={pieces[artKey].imageSource}
-      ></Image>
+      <h1>Art Gallery</h1>
+      <section>
+        <h2>Artist Name : {pieces[artKey].artist}</h2>
+        <Image
+          src={pieces[artKey].imageSource}
+          height={400}
+          width={300}
+          alt={pieces[artKey].imageSource}
+        ></Image>
       </section>
     </>
   );
