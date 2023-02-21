@@ -19,6 +19,7 @@ export default function HomePage() {
   return (
     <>
       <ArtPieces pieces={data} />
+      <Navigation></Navigation>
     </>
   );
 }

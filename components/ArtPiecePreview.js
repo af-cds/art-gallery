@@ -6,7 +6,7 @@ export default function ArtPiecePreview({ image, title, artist, key }) {
   return (
     <>
       <dt>image</dt>
-      <Image src={image} height={144} width={144} alt="art pieces"></Image>
+      <Image src={image} height={300} width={200} alt="art pieces"></Image>
       <dt>Title:</dt>
       <dd>{title}</dd>
       <dt>Artist:</dt>
