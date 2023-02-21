@@ -17,6 +17,7 @@ export default function Layout({children}) {
   return (
     <>
     <AppStyling>
+    <h1>Art Gallery</h1>
     {children}
     <LayoutStyling>
         <Navigation />
