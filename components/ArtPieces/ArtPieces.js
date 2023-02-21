@@ -1,11 +1,17 @@
 import Link from "next/link";
 import React from "react";
 import ArtPiecePreview from "../ArtPiecePreview/ArtPiecePreview";
+import styled from "styled-components";
+
+const PreviewStyling = styled.section`
+  display: flexbox;
+  gap: 10px;
+  
+`;
 
 export default function ArtPieces({ pieces }) {
   return (
     <>
-      <h2>Art Pieces</h2>
       <div>
         {pieces.map((piece) => (
           <ul key={piece.slug}>

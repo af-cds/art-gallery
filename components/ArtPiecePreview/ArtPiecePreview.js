@@ -2,6 +2,8 @@ import React from "react";
 import Image from "next/image";
 import ArtDetails from "../../pages/art-pieces/[slug]";
 import { useRouter } from "next/router";
+import styled from "styled-components";
+
 
 export default function ArtPiecePreview({ image, title, artist, slug }) {
   const router = useRouter();
@@ -10,7 +12,6 @@ export default function ArtPiecePreview({ image, title, artist, slug }) {
     const wholeURL = `/art-pieces/${slug}`;
     router.push(wholeURL);
   }
-
   return (
     <>
       <Image
@@ -20,7 +21,7 @@ export default function ArtPiecePreview({ image, title, artist, slug }) {
         width={200}
         alt="art pieces"
       ></Image>
-      <dt>Title: {title}</dt>
+      <dt>Title:{title}</dt>
       <dt>Artist: {artist}</dt>
     </>
   );
