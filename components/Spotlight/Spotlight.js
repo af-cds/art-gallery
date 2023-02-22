@@ -2,7 +2,7 @@ import Image from "next/image";
 import FavouriteButton from "../FavouriteButton/FavouriteButton";
 import Favourites from "../FavouriteButton/FavouriteButton";
 
-export default function Spotlight({ pieces, artPiecesInfo, setArtPiecesInfo }) {
+export default function Spotlight({ pieces, artPiecesInfo, setArtPiecesInfo, toggleFavorite }) {
   const totalArts = 11;
   let artKey = 0;
 
@@ -12,10 +12,6 @@ export default function Spotlight({ pieces, artPiecesInfo, setArtPiecesInfo }) {
   }
 
   getRandomArt(lengthOfPieces);
-
-  const slugB = pieces[artKey].slug
-  console.log(slugB)
-
 
   return (
     <>
@@ -29,10 +25,11 @@ export default function Spotlight({ pieces, artPiecesInfo, setArtPiecesInfo }) {
         ></Image>
         <>
           <FavouriteButton
+          toggleFavorite={toggleFavorite}
           setArtPiecesInfo={setArtPiecesInfo}
           artPiecesInfo={artPiecesInfo}
           pieces={pieces}
-          slugB={slugB} 
+          slug={pieces[artKey].slug} 
           />
         </>
       </section>
