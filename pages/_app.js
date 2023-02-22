@@ -4,11 +4,12 @@ import useSWR from "swr";
 import { useState } from "react";
 import Layout from "../components/Layout/Layout";
 // import styles from '../components/Navigation/Navigation.module.css'
+import { Inter } from '@next/font/google'
 
+const inter = Inter({ subsets: ['latin'] })
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
 export default function App({ Component, pageProps }) {
-  // ['orange-red-and-green', 'clay-bust-sculptures']
 
   const [artPiecesInfo, setArtPiecesInfo] = useState({ favourites: [] });
 
@@ -41,7 +42,7 @@ export default function App({ Component, pageProps }) {
     <>
       <GlobalStyle />
       <SWRConfig value={{ fetcher }}>
-        <Layout>
+        <Layout className={inter.className}>
           <Component
             {...pageProps}
             toggleFavorite={toggleFavorite}

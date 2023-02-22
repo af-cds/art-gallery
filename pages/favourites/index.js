@@ -9,5 +9,11 @@ export default function Favourites({ pieces, artPiecesInfo, toggleFavorite }) {
     artPiecesInfo.favourites.includes(piece.slug)
   );
 
-  return <ArtPieces pieces={includedArt} toggleFavorite={toggleFavorite} />;
+  return (
+  <>
+  <div style={{textAlign: "center", fontWeight: "600"}}>My Favourites</div>
+  <br></br>
+  <ArtPieces pieces={includedArt} toggleFavorite={toggleFavorite}/>
+  </>
+  )
 }

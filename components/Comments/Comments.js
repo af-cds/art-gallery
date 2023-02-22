@@ -1,10 +1,10 @@
 export default function Comments({ comments }) {
   if (comments.length === 0) {
-    return <h1>No comments</h1>;
+    // return <h3>No comments</h3>;
   } else {
     return (
       <div>
-        <h2>Your comments:</h2>
+        <h3>Your comments:</h3>
         <ul className="commentList">
           {comments.map((comment) => {
             return (

@@ -9,13 +9,14 @@ const NavStyling = styled.nav`
   gap: 30px;
   border: solid 2px;
   border-radius: 50px;
-  border-color: grey;
-  bottom: 10px;
+  border-color: #828a95;
+  bottom: 15px;
   text-decoration: none;
   position: fixed;
   z-index: 1;
-  color: whitesmoke;
-  background-color: grey;
+  color: #f1fffa;
+  font-weight: 600;
+  background-color: #828a95;
 
 `;
 const LinkStyled = styled.link`
