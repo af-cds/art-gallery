@@ -6,20 +6,23 @@ const NavStyling = styled.nav`
   display: flex;
   justify-content: space-between;
   padding: 5%;
-  margin-top: 50px;
   gap: 30px;
-  border: solid 1px;
+  border: solid 2px;
   border-radius: 50px;
   bottom: 0px;
+  text-decoration: none;
+`;
+const LinkStyled = styled.link`
+  text-decoration: none;
 `;
 
 export default function Navigation() {
   return (
   <>
   <NavStyling>
-  <Link href='/'>Spotlight</Link>
-  <Link href='/art-pieces'>Pieces</Link>
-  <Link href='/favourites'>Favourites</Link>
+  <Link style={{ color: 'inherit', textDecoration: 'inherit'}} href='/'>Spotlight</Link>
+  <Link style={{ color: 'inherit', textDecoration: 'inherit'}} href='/art-pieces'>Pieces</Link>
+  <Link style={{ color: 'inherit', textDecoration: 'inherit'}} href='/favourites'>Favourites</Link>
   </NavStyling>
   </>
   )

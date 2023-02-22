@@ -3,10 +3,11 @@ import React from "react";
 import ArtPiecePreview from "../ArtPiecePreview/ArtPiecePreview";
 import styled from "styled-components";
 
-const PreviewStyling = styled.section`
-  display: flexbox;
+const PiecesStyling = styled.section`
+  padding: 5%;
   gap: 10px;
-  
+  border: solid 2px;
+  border-radius: 10px;
 `;
 
 export default function ArtPieces({ pieces, toggleFavorite }) {
@@ -14,6 +15,7 @@ export default function ArtPieces({ pieces, toggleFavorite }) {
     <>
       <div>
         {pieces.map((piece) => (
+          <PiecesStyling>
           <ul key={piece.slug}>
             <ArtPiecePreview
               toggleFavorite={toggleFavorite}
@@ -23,6 +25,7 @@ export default function ArtPieces({ pieces, toggleFavorite }) {
               slug={piece.slug}
             ></ArtPiecePreview>
           </ul>
+          </PiecesStyling>
         ))}
       </div>
     </>
