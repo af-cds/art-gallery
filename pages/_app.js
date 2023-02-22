@@ -9,7 +9,16 @@ const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
 export default function App({ Component, pageProps }) {
   
-  const [artCollection, setArtCollection] = useState([])
+  // const [artCollection, setArtCollection] = useState([])
+
+  const [artPiecesInfo, setArtPiecesInfo] = useState({favourites: []})
+
+  const toggleFavorite = (slug) => {
+
+  } 
+  
+  // console.log(artPiecesInfo)
+  
 
   const { data, error, isLoading } = useSWR(
     "https://example-apis.vercel.app/api/art",
@@ -19,10 +28,6 @@ export default function App({ Component, pageProps }) {
   if (error) return <div>failed to load</div>;
   if (isLoading) return <div>loading...</div>;
 
-  console.log(data);
-  console.log(artCollection)
-
-
   return (
     <>
       <GlobalStyle />
@@ -31,6 +36,8 @@ export default function App({ Component, pageProps }) {
         <Component 
         {...pageProps}
         pieces={data}
+        artPiecesInfo={artPiecesInfo}
+        setArtPiecesInfo={setArtPiecesInfo}
         />
       </Layout>
       </SWRConfig>
