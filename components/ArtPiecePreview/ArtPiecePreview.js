@@ -35,7 +35,8 @@ export default function ArtPiecePreview({
         pieces={pieces}
         slug={slug}
       />
-      <dt>Title:{title}</dt>
+      <dt>Title: {title}</dt>
+      <br></br>
       <dt>Artist: {artist}</dt>
     </>
   );

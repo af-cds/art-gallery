@@ -6,10 +6,14 @@ import styled from "styled-components";
 const LayoutStyling = styled.section`
     display: flex;
     justify-content: space-evenly;
+    text-decoration: none;
+    margin-top: 15px;
+    
 `;
 
 const AppStyling = styled.section`
     padding: 5%;
+    font-size: small;
     background-color: #D6D2D2;
 `;
 

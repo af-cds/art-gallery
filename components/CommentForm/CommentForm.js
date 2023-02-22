@@ -1,4 +1,17 @@
 import React, { Component } from "react";
+import styled from "styled-components";
+
+
+
+const CommentsStyling = styled.section`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5%;
+  gap: 10px;
+  border-radius: 25px;
+
+`;
 
 export default function CommentForm({ onSubmitComment }) {
   function onHandleSubmit(event) {
@@ -14,9 +27,9 @@ export default function CommentForm({ onSubmitComment }) {
   }
 
   return (
-    <>
-      <h1>Comment form</h1>
+    
       <form className="commentForm" onSubmit={onHandleSubmit}>
+        <CommentsStyling>
         <label htmlFor="commentText">Add Comment</label>
         <textarea
           className="commentArea"
@@ -26,7 +39,7 @@ export default function CommentForm({ onSubmitComment }) {
           columns={10}
         ></textarea>
         <button className="commentSubmitButton">Send</button>
+        </CommentsStyling>
       </form>
-    </>
   );
 }
