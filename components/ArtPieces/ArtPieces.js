@@ -9,13 +9,14 @@ const PreviewStyling = styled.section`
   
 `;
 
-export default function ArtPieces({ pieces }) {
+export default function ArtPieces({ pieces, toggleFavorite }) {
   return (
     <>
       <div>
         {pieces.map((piece) => (
           <ul key={piece.slug}>
             <ArtPiecePreview
+              toggleFavorite={toggleFavorite}
               image={piece.imageSource}
               title={piece.name}
               artist={piece.artist}

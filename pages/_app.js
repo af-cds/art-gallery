@@ -9,13 +9,31 @@ const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
 export default function App({ Component, pageProps }) {
   
-  // const [artCollection, setArtCollection] = useState([])
+  // ['orange-red-and-green', 'clay-bust-sculptures']
 
-  const [artPiecesInfo, setArtPiecesInfo] = useState({favourites: []})
+  const [artPiecesInfo, setArtPiecesInfo] = useState({favourites: [] })
 
-  const toggleFavorite = (slug) => {
+  function toggleFavorite(slug) {
+    console.log(artPiecesInfo);
+    console.log('slug:', slug);
+    console.log('favourites:', artPiecesInfo.favourites);
 
-  } 
+    const isFav = artPiecesInfo.favourites.includes(slug);
+    console.log(isFav)
+
+    if (isFav) {
+      setArtPiecesInfo({
+        ...artPiecesInfo,
+        favourites: artPiecesInfo.favourites.filter(piece => piece != slug),
+      });
+    } else {
+      artPiecesInfo.favourites.push(slug);
+      setArtPiecesInfo({
+        ...artPiecesInfo,
+        favourites: [...artPiecesInfo.favourites],
+      });
+    }
+  }
   
   // console.log(artPiecesInfo)
   
@@ -35,6 +53,7 @@ export default function App({ Component, pageProps }) {
       <Layout>
         <Component 
         {...pageProps}
+        toggleFavorite={toggleFavorite}
         pieces={data}
         artPiecesInfo={artPiecesInfo}
         setArtPiecesInfo={setArtPiecesInfo}
