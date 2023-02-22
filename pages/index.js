@@ -12,12 +12,12 @@ const SpotlightStyling = styled.section`
   justify-content: center;
 `;
 
-export default function SpotlightPage({pieces}) {
+export default function SpotlightPage({pieces, setArtPiecesInfo, artPiecesInfo}) {
   
   return (
     <>
     <SpotlightStyling>
-            <Spotlight pieces={pieces} />
+            <Spotlight pieces={pieces} artPiecesInfo={artPiecesInfo}  setArtPiecesInfo={setArtPiecesInfo}/>
             </SpotlightStyling>
     </>
   );
