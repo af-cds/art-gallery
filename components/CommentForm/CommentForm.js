@@ -4,9 +4,8 @@ export default function CommentForm({ onSubmitComment }) {
   function onHandleSubmit(event) {
     event.preventDefault();
 
-    const formData = new FormData(event.target);
-    //const comment = Object.fromEntries(formData);
-    const commentText = event.target.elements.commentText.value;
+    const formElements = event.target.elements;
+    const commentText = formElements.commentText.value;
     const commentDateTime = new Date().toLocaleString() + "";
 
     //console.log("comments added", commentText);
