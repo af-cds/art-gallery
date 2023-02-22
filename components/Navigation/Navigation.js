@@ -9,8 +9,14 @@ const NavStyling = styled.nav`
   gap: 30px;
   border: solid 2px;
   border-radius: 50px;
-  bottom: 0px;
+  border-color: grey;
+  bottom: 10px;
   text-decoration: none;
+  position: fixed;
+  z-index: 1;
+  color: whitesmoke;
+  background-color: grey;
+
 `;
 const LinkStyled = styled.link`
   text-decoration: none;

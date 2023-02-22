@@ -7,7 +7,8 @@ const LayoutStyling = styled.section`
     display: flex;
     justify-content: space-evenly;
     text-decoration: none;
-    margin-top: 15px;
+    margin-top: 15px;   
+    position: relative; 
     
 `;
 
