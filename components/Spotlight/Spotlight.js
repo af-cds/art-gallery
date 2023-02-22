@@ -1,6 +1,8 @@
 import Image from "next/image";
+import FavouriteButton from "../FavouriteButton/FavouriteButton";
+import Favourites from "../FavouriteButton/FavouriteButton";
 
-export default function Spotlight({ pieces }) {
+export default function Spotlight({ pieces, artPiecesInfo, setArtPiecesInfo, toggleFavorite }) {
   const totalArts = 11;
   let artKey = 0;
 
@@ -21,6 +23,15 @@ export default function Spotlight({ pieces }) {
           width={300}
           alt={pieces[artKey].imageSource}
         ></Image>
+        <>
+          <FavouriteButton
+          toggleFavorite={toggleFavorite}
+          setArtPiecesInfo={setArtPiecesInfo}
+          artPiecesInfo={artPiecesInfo}
+          pieces={pieces}
+          slug={pieces[artKey].slug} 
+          />
+        </>
       </section>
     </>
   );

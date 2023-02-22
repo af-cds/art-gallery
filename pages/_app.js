@@ -8,8 +8,26 @@ import Layout from "../components/Layout/Layout";
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
 export default function App({ Component, pageProps }) {
-  // const [artCollection, setArtCollection] = useState([]);
+  // ['orange-red-and-green', 'clay-bust-sculptures']
+
   const [artPiecesInfo, setArtPiecesInfo] = useState({ favourites: [] });
+
+  function toggleFavorite(slug) {
+    const isFav = artPiecesInfo.favourites.includes(slug);
+
+    if (isFav) {
+      setArtPiecesInfo({
+        ...artPiecesInfo,
+        favourites: artPiecesInfo.favourites.filter((piece) => piece != slug),
+      });
+    } else {
+      artPiecesInfo.favourites.push(slug);
+      setArtPiecesInfo({
+        ...artPiecesInfo,
+        favourites: [...artPiecesInfo.favourites],
+      });
+    }
+  }
 
   const { data, error, isLoading } = useSWR(
     "https://example-apis.vercel.app/api/art",
@@ -24,7 +42,13 @@ export default function App({ Component, pageProps }) {
       <GlobalStyle />
       <SWRConfig value={{ fetcher }}>
         <Layout>
-          <Component {...pageProps} pieces={data} />
+          <Component
+            {...pageProps}
+            toggleFavorite={toggleFavorite}
+            pieces={data}
+            artPiecesInfo={artPiecesInfo}
+            setArtPiecesInfo={setArtPiecesInfo}
+          />
         </Layout>
       </SWRConfig>
     </>

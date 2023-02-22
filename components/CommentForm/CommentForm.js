@@ -8,10 +8,7 @@ export default function CommentForm({ onSubmitComment }) {
     const commentText = formElements.commentText.value;
     const commentDateTime = new Date().toLocaleString() + "";
 
-    //console.log("comments added", commentText);
-    // console.log("comments added =>", comment.commentText);
     onSubmitComment({ commentText, commentDateTime });
-    console.log({ commentText, commentDateTime });
 
     event.target.reset();
   }

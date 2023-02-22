@@ -1,6 +1,5 @@
 export default function Comments({ comments }) {
   if (comments.length === 0) {
-    console.log("comments 0");
     return <h1>No comments</h1>;
   } else {
     return (

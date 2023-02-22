@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 // import Image from "next/image";
 import ArtPieceDetails from "../../components/ArtPieceDetails/ArtPieceDetails";
 
-export default function ArtDetails({ pieces }) {
+export default function ArtDetails({ pieces, toggleFavorite }) {
   const router = useRouter();
   const slug = router.query.slug;
 
@@ -17,6 +17,7 @@ export default function ArtDetails({ pieces }) {
 
   return (
     <ArtPieceDetails
+    toggleFavorite={toggleFavorite}
       image={imageSource}
       title={name}
       artist={artist}
