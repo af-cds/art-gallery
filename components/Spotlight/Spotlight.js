@@ -1,6 +1,23 @@
 import Image from "next/image";
 import FavouriteButton from "../FavouriteButton/FavouriteButton";
 import Favourites from "../FavouriteButton/FavouriteButton";
+import styled from "styled-components";
+
+const SpotlightStyling = styled.section`
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    text-align: center;
+    
+`;
+
+const FrameStyling = styled.img`
+    border: solid 15px;
+    border-style: double;
+    border-width: 5%
+`;
 
 export default function Spotlight({ pieces, artPiecesInfo, setArtPiecesInfo, toggleFavorite }) {
   const totalArts = 11;
@@ -15,14 +32,14 @@ export default function Spotlight({ pieces, artPiecesInfo, setArtPiecesInfo, tog
 
   return (
     <>
-      <section>
-        <h2>Artist Name : {pieces[artKey].artist}</h2>
-        <Image
+    <SpotlightStyling>
+        <h3>Artist Name: {pieces[artKey].artist}</h3>
+        <FrameStyling
           src={pieces[artKey].imageSource}
           height={400}
           width={300}
           alt={pieces[artKey].imageSource}
-        ></Image>
+        ></FrameStyling>
         <>
           <FavouriteButton
           toggleFavorite={toggleFavorite}
@@ -32,7 +49,7 @@ export default function Spotlight({ pieces, artPiecesInfo, setArtPiecesInfo, tog
           slug={pieces[artKey].slug} 
           />
         </>
-      </section>
+      </SpotlightStyling>
     </>
   );
 }

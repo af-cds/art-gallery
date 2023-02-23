@@ -16,6 +16,7 @@ export default function SpotlightPage({pieces, setArtPiecesInfo, artPiecesInfo, 
   
   return (
     <>
+    <div style={{textAlign: "center", fontWeight: "600"}}>Art Gallery</div>
     <SpotlightStyling>
             <Spotlight pieces={pieces} artPiecesInfo={artPiecesInfo}  setArtPiecesInfo={setArtPiecesInfo} toggleFavorite={toggleFavorite}/>
             </SpotlightStyling>

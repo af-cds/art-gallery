@@ -5,6 +5,15 @@ import { useRouter } from "next/router";
 import styled from "styled-components";
 import FavouriteButton from "../FavouriteButton/FavouriteButton";
 
+const PiecesStyling = styled.section`
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+`;
+
+
 export default function ArtPiecePreview({
   image,
   title,
@@ -21,7 +30,7 @@ export default function ArtPiecePreview({
     router.push(wholeURL);
   }
   return (
-    <>
+    <PiecesStyling>
       <Image
         onClick={onHandleClick}
         src={image}
@@ -38,6 +47,6 @@ export default function ArtPiecePreview({
       <dt>Title: {title}</dt>
       <br></br>
       <dt>Artist: {artist}</dt>
-    </>
+    </PiecesStyling>
   );
 }

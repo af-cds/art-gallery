@@ -16,7 +16,7 @@ export default function ArtPieces({ pieces, toggleFavorite }) {
       <div>
         {pieces.map((piece) => (
           <PiecesStyling>
-          <ul key={piece.slug}>
+          <div key={piece.slug}>
             <ArtPiecePreview
               toggleFavorite={toggleFavorite}
               image={piece.imageSource}
@@ -24,7 +24,7 @@ export default function ArtPieces({ pieces, toggleFavorite }) {
               artist={piece.artist}
               slug={piece.slug}
             ></ArtPiecePreview>
-          </ul>
+          </div>
           </PiecesStyling>
         ))}
       </div>

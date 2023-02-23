@@ -7,8 +7,8 @@ const CommentsStyling = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 5%;
-  gap: 10px;
+  padding: 2%;
+  gap: 5px;
   border-radius: 25px;
 
 `;
@@ -35,8 +35,8 @@ export default function CommentForm({ onSubmitComment }) {
           className="commentArea"
           name="commentText"
           id="commentText"
-          rows={5}
-          columns={10}
+          rows={2}
+          columns={5}
         ></textarea>
         <button className="commentSubmitButton">Send</button>
         </CommentsStyling>

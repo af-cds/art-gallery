@@ -8,19 +8,14 @@ import FavouriteButton from "../FavouriteButton/FavouriteButton";
 import styled from "styled-components";
 
 const CenterStyling = styled.section`
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
   align-items: center;
-  align-content: center; 
   align-self: center;
-  margin-left: 5%;
+  margin-top: 10px;
 `;
 
-const CenterImg = styled.section`
-  align-items: center;
-  align-content: center; 
-  align-self: center;
-  margin-left: 20%;
-  text-align: left;
-`;
 
 export default function ArtPieceDetails({
   image,
@@ -42,7 +37,8 @@ export default function ArtPieceDetails({
   //export default function ArtPieceDetails({ image, title, artist, year, genre, toggleFavorite, artPiecesInfo, slug, pieces}) {
   return (
     <>
-    <CenterImg>
+      <div style={{textAlign: "center", fontWeight: "400"}}>Details</div>
+    <CenterStyling>
       <Image src={image} height={300} width={200} alt={title} />
       <FavouriteButton
         toggleFavorite={toggleFavorite}
@@ -50,14 +46,13 @@ export default function ArtPieceDetails({
         pieces={pieces}
         slug={slug}
       />
-       </CenterImg>
-      <ul>
-        <li>Title: {title} </li>
-        <li>Name: {artist} </li>
-        <li>Year: {year} </li>
-        <li>Genre: {genre} </li>
-      </ul>
-    
+      <>
+        <div>Title: {title} </div>
+        <div>Name: {artist} </div>
+        <div>Year: {year} </div>
+        <div>Genre: {genre} </div>
+      </>
+      </CenterStyling>
       <CenterStyling>
       <Comments comments={comments}></Comments>
       </CenterStyling>
